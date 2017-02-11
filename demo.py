@@ -10,9 +10,14 @@ train, test, _ = imdb.load_data(path='imdb.pkl', n_words=10000,
 trainX, trainY = train
 testX, testY = test
 
+print(trainX[:5])
+
+
 # Data preprocessing
 # Sequence padding
 trainX = pad_sequences(trainX, maxlen=100, value=0.)
+print(trainX[:5])
+
 testX = pad_sequences(testX, maxlen=100, value=0.)
 # Converting labels to binary vectors
 trainY = to_categorical(trainY, nb_classes=2)
